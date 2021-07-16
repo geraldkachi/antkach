@@ -1,6 +1,15 @@
 import React from "react";
 
 const PostData = ({ posts, loading }) => {
+  if (loading) {
+    return (
+      <div style={{display:'flex', alignItems:'center', justifyContent:'center'}}>
+        <div className="spinner-border text-success"></div>
+        <div>Loading Your Dumb Ass Data</div>
+      </div>
+    );
+  }
+
   return (
     <div className="text-center">
       {posts.map((post) => (

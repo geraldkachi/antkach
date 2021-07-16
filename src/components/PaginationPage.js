@@ -12,12 +12,12 @@ const PaginationPage = () => {
   useEffect(() => {
     const fetchPost = async () => {
       setLoading(true);
-      const res = await axios.get("https://jsonplaceholder.typicode.com/posts");
+      const res = await axios.get("https://jsonplaceholder.typicode.com/posts")
       setPosts(res.data);
       setLoading(false);
+      // console.log(setPosts(res.data))
     };
     fetchPost();
-    console.log(fetchPost());
   }, []);
 
   //   const PostList = posts.lenght ? (
