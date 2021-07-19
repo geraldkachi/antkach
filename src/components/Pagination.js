@@ -2,7 +2,8 @@ import React, {useState, useEffect}  from "react";
 
 const Pagination = ({ totalPosts, paginate, setcurrentPage, currentPage }) => {
 
-    const [pageNumLimit, setPageNumLimit] = useState(5)
+    // const [pageNumLimit, setPageNumLimit] = useState(5)
+    const [pageNumLimit] = useState(5)
     const [maxPageNumLimit, setmaxPageNumLimit] = useState(5)
     const [minPageNumLimit, setminPageNumLimit] = useState(0)
 
@@ -70,9 +71,9 @@ const Pagination = ({ totalPosts, paginate, setcurrentPage, currentPage }) => {
         <li>
           <button onClick={() => setcurrentButton(prev => prev === 1 ? prev : prev - 1)} disabled={currentPage === pageNumbers[0] ? true : false}>Previous</button>
         </li>
-        {pageIncrementBtn}
-        {renderPageNumbers}
         {pageDecrementBtn}
+        {renderPageNumbers}
+        {pageIncrementBtn}
         <li>
           <button onClick={() => setcurrentButton(next => next === pageNumbers.length ? next : next + 1)} disabled={currentPage === pageNumbers[pageNumbers.length - 1] ? true : false} >Next</button>
         </li>
