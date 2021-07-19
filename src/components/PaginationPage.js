@@ -39,6 +39,8 @@ const PaginationPage = () => {
   const indexOfLastPage = currentPage * postsPerPage;
   const indexOfFirstPost = indexOfLastPage - postsPerPage
   const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPage)
+  const totalPosts = Math.ceil(posts.length / postsPerPage)
+  // const totalPagesNum = Math.ceil(posts.length / postsPerPage)
 
   // Change Post
   const paginate = (pageNumbers) => setcurrentPage(pageNumbers)
@@ -46,12 +48,12 @@ const PaginationPage = () => {
   return (
     <div>
       <div className="text-center">
-        <h1 className="text-end">HELP</h1>
+        {/* <h1 className="">Pagination</h1> */}
       </div>
       <div className="">
         <h1>Post Datas</h1>
         <PostData posts={currentPosts} {...{loading}} />
-        <Pagination {...{postsPerPage}} totalPosts={posts.length} {...{paginate}} />
+        <Pagination {...{setcurrentPage}} {...{postsPerPage}} totalPosts={totalPosts} {...{paginate}} {...{currentPage}} />
       </div>
     </div>
   );

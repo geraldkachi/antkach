@@ -71,7 +71,10 @@ const LayoutPage = () => {
                   <Breadcrumb.Item>App</Breadcrumb.Item>
                   <div style={{background: '#fff', padding:'24px', minHeight: 280}}></div>
                 </Breadcrumb>
-                <Link to="paginate">Please Press Me!!! to gi to Pagination</Link>
+                <div style={{display:'flex', justifyContent: "center", alignItems: 'center'}}>
+                  <Link to="paginate">Please Press Me!!! to gi to Pagination</Link>
+                  <Link to="pagenext">BEst Page</Link>
+                </div>
               </Content>
               <CareerDetails player={stateValue} {...{visible}} {...{onClose}} />
               <Footer><ViewProfileButton name="LordGerald" />
